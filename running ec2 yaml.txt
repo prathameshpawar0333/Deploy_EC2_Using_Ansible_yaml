@@ -1,0 +1,45 @@
+
+for create EC2 instance
+
+- name: ansible_key
+  hosts: localhost
+  tasks:
+  - name: ec2
+
+    ec2:
+      key_name: 
+      region: 
+      instance_type: t2.micro
+      image: 
+      instance_tags:
+        name: demo_ansible
+
+for stop EC2 instance
+     
+- name: stop
+  hosts: localhost
+  tasks:
+  - name: ec2
+
+    ec2:
+      key_name: 
+      region: 
+      state: stopped
+      instance_tags:
+        name: demo_ansible
+
+
+
+for terminate EC2 instance
+
+- name: terminate
+  hosts: localhost
+  tasks:
+  - name: ec2
+
+    ec2:
+      key_name: 
+      region: 
+      state: absent
+      instance_tags:
+        name: demo_ansible
